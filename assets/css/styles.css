@@ -1,6 +1,8 @@
 /*
 pallette
-turquoise = #60d8d8
+teal = #60d8d8
+dark-teal = #208383
+darker-teal = #186363
 light gray = #807c6d
 dark gray = #7e7a6c
 cream = #fcfaf1
@@ -13,7 +15,10 @@ body {
   font-size: 15px;
   font-size: 0.9375rem;
   font-family: "Open sans", Helvetica, Arial, sans-serif;
-  color: #666666;
+  color: #454545;
+  background-color: #fcfaf1;
+  background: url(../images/creampaper.png);
+  -webkit-filter: brightness(104%);
   padding: 0;
 }
 .topspace {
@@ -54,7 +59,7 @@ h6,
 .h6 {
   font-family: "Open sans", Helvetica, Arial, sans-serif;
   font-weight: 400;
-  color: #7e7a6c;
+  color: #454545;
 }
 h1 {
   font-size: 40px;
@@ -67,6 +72,8 @@ h2 {
 h3 {
   font-size: 30px;
   font-size: 1.875rem;
+  color: #fafafa;
+  text-shadow: 0 1px 4px #454545;
 }
 h4 {
   font-size: 24px;
@@ -77,10 +84,10 @@ h5 {
   font-size: 1.25rem;
 }
 a {
-  color: #bd1550;
+  color: #186363;
 }
 a:hover {
-  color: #e93675;
+  color: #186363;
 }
 .lead {
   font-weight: 300;
@@ -120,7 +127,7 @@ a:hover {
 #head h1 {
   color: #fcfaf1;
 }
-#head .logo {
+#head .top-pic {
   width: 50%;
   margin: auto;
   border: 0.1em solid;
@@ -143,6 +150,9 @@ a:hover {
   line-height: 1.2em;
   margin: 7px 0 0;
 }
+.ampersand {
+  /*color: #186363*/
+}
 /*********************************************************************
  
 
@@ -159,6 +169,7 @@ a:hover {
   border-radius: 0;
   background-clip: padding-box;
   width: 100%;
+  margin-bottom: 0px;
 }
 .navbar.stick {
   position: fixed;
@@ -197,22 +208,22 @@ a:hover {
   padding: 5px 30px;
 }
 .navbar-default {
-  background-color: #ffffff;
+  background-color: #186363;
   border-color: #cccccc;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #454545;
+  color: #fafafa;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #000000;
-  background-color: #ffffff;
+  color: #186363;
+  background-color: #fafafa;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  color: #000000;
-  background-color: #ffffff;
+  color: #186363;
+  background-color: #fafafa;
 }
 .navbar-default .dropdown ul.dropdown-menu > li > a {
   color: #454545;
@@ -240,6 +251,14 @@ a:hover {
 .navbar-default .navbar-nav > .open > a:focus {
   background-color: #ffffff;
   color: #000000;
+}
+.navbar-brand {
+  max-height: 20px;
+  margin-top: -10px;
+}
+.navbar-brand #logo {
+  height: 50px;
+  margin-left: 30px;
 }
 /*********************************************************************
  
@@ -278,8 +297,8 @@ img {
   text-shadow: 0 1px 0px #780d33;
 }
 .btn-primary {
-  color: #fff;
-  background-color: #bd1550;
+  color: #fafafa;
+  background-color: #186363;
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -306,6 +325,10 @@ img {
   font-size: 12px;
   line-height: 1.33;
   font-weight: bold;
+}
+.page-header {
+  text-shadow: 0 1px 2px #bababa;
+  margin-top: 10px;
 }
 .panel-cta {
   box-shadow: 0 0 0 1px #e1e1e1, 0 0 0 3px #fff, 0 0 0 4px #e1e1e1;
