@@ -24,6 +24,11 @@ body {
 .topspace {
   margin-top: 40px;
 }
+.carousel-inner > .item > img {
+    height: 400px;
+    /*width: 100%;*/
+    margin: 0px auto;
+}
 /*********************************************************************
  
 
