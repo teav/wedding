@@ -1,20 +1,4 @@
 $(function() {
-  $('#navbar a').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html,body').animate({
-          scrollTop: target.offset().top - 60
-        }, 1000);
-        return false;
-	  };
-	}
-  });
-});
-
-jQuery(document).ready(function($) {
-
 	var my_nav = $('.navbar-sticky'); 
 	// grab the initial top offset of the navigation 
 	var sticky_navigation_offset_top = my_nav.offset().top;
@@ -49,6 +33,72 @@ jQuery(document).ready(function($) {
 		 sticky_navigation();
 		 // initio_parallax_animation();
 	});
+	  $('#navbar a').click(function() {
+	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	      if (target.length) {
+	        $('html,body').animate({
+	          scrollTop: target.offset().top - 60
+	        }, 1000);
+	        return false;
+		  };
+		}
+	  });
+
+	  // $.adaptiveBackground.run();
+
+	$('#rsvp-form').on('submit', function(e) {
+		e.preventDefault();
+	  	var form = $(this),
+	  		songs = form.find('input[name=songs]'),
+	  		songList = form.find('input[name^=song]').filter(function() {
+	  			return !!this.value;
+	  		}).map(function() {
+	  			return this.value;
+	  		});
+
+	  	songs.val(songList.toArray().join(','));
+
+	  	$.ajax({
+	  		url: form.attr('action'),
+	  		type: form.attr('method'),
+	  		dataType: 'xml',
+	  		// jsonp: doSuccess,
+	  		// jsonpCallback: 'success',
+	  		// contentType: 'xml',
+	  		data: serializeGoogleForm(),
+	  		success: function(data) {
+	  			console.log('in success callback', data);
+	  		},
+	  		error: function(a, b, c) {
+	  			console.log('in error callback', a, b, c);
+	  		},
+	  		complete: function() {
+	  			form.hide();
+	  			$('#rsvp-success').show();
+	  		}
+		});
+
+		function serializeGoogleForm() {
+			var gData = {};
+			form.find('.g-form').each(function(i, input) {
+				var val = input.value;
+				if (!!val) {
+					gData[input.dataset.gName] = val;
+				}
+			});
+			return gData;
+		}
+
+		function doSuccess(response) {
+			console.log('yay!', response);
+		}
+
+	});
+});
+
+jQuery(document).ready(function($) {
 
 	/*
 	 * declare map as a global variable

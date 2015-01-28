@@ -24,10 +24,8 @@ body {
 .topspace {
   margin-top: 40px;
 }
-.carousel-inner > .item > img {
-    height: 400px;
-    /*width: 100%;*/
-    margin: 0px auto;
+.gm-style-iw + div img {
+    max-width: none; 
 }
 /*********************************************************************
  
@@ -155,9 +153,6 @@ a:hover {
   line-height: 1.2em;
   margin: 7px 0 0;
 }
-.ampersand {
-  /*color: #186363*/
-}
 /*********************************************************************
  
 
@@ -230,40 +225,12 @@ a:hover {
   color: #186363;
   background-color: #fafafa;
 }
-.navbar-default .dropdown ul.dropdown-menu > li > a {
-  color: #454545;
-}
-.navbar-default .dropdown ul.dropdown-menu > li > a:hover {
-  background-color: #eeeeee;
-  color: #000000;
-}
-.navbar-default .navbar-toggle {
-  border-color: #ff0000;
-}
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus {
-  background-color: #008000;
-}
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #0000ff;
-}
-.navbar-default .navbar-collapse,
-.navbar-default .navbar-form {
-  border-color: #cccccc;
-}
-.navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .open > a:hover,
-.navbar-default .navbar-nav > .open > a:focus {
-  background-color: #ffffff;
-  color: #000000;
-}
 .navbar-brand {
   max-height: 20px;
   margin-top: -10px;
 }
 .navbar-brand #logo {
   height: 50px;
-  margin-left: 30px;
 }
 /*********************************************************************
  
@@ -282,11 +249,11 @@ img {
   text-transform: uppercase;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
-  -webkit-border-radius: 0px;
+  -webkit-border-radius: 2px;
   -webkit-background-clip: padding-box;
-  -moz-border-radius: 0px;
+  -moz-border-radius: 2px;
   -moz-background-clip: padding;
-  border-radius: 0px;
+  border-radius: 2px;
   background-clip: padding-box;
   -webkit-transition-property: all;
   -moz-transition-property: all;
@@ -299,7 +266,6 @@ img {
   transition-duration: 0.2s;
   border: 0 none;
   padding: 12px 35px;
-  text-shadow: 0 1px 0px #780d33;
 }
 .btn-primary {
   color: #fafafa;
@@ -309,8 +275,8 @@ img {
 .btn-primary:focus,
 .btn-primary:active,
 .btn-primary.active {
-  color: #fff;
-  background-color: #e61f65;
+  color: #186363;
+  background-color: #fafafa;
 }
 .btn-action {
   font-weight: bold;
@@ -335,42 +301,46 @@ img {
   text-shadow: 0 1px 2px #bababa;
   margin-top: 10px;
 }
-.panel-cta {
-  box-shadow: 0 0 0 1px #e1e1e1, 0 0 0 3px #fff, 0 0 0 4px #e1e1e1;
-  background: #f3f3f3;
-  -webkit-border-radius: 0;
-  -webkit-background-clip: padding-box;
-  -moz-border-radius: 0;
-  -moz-background-clip: padding;
-  border-radius: 0;
-  background-clip: padding-box;
-}
-.panel-cta p,
-.panel-cta h3,
-.panel-cta h4,
-.panel-cta h5,
-.panel-cta h6 {
-  margin: 0;
-}
-.panel-cta .panel-body {
-  padding: 35px;
+.carousel-inner > .item > img {
+    height: 400px;
+    /*width: 100%;*/
+    margin: 0px auto;
 }
 
 /* Section - Story */
 
 /* Section - People */
-
+.person {
+  height: 180px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.person:hover {
+  cursor: pointer;
+  -webkit-filter: saturate(0%);
+}
+.person > img {
+  min-height: 180px;
+}
 /* Section - Celebration */
 .events .event {
   height: 200px;
 }
+/* Section - Location */
+#location p {
+  margin-top: 20px;
+}
 /* Section - RSVP */
-
+#rsvp-success {
+  background-color: #186363;
+  color: #fafafa;
+  padding: 50px 0;
+}
 /* Section - Accomodations */
 
 /* Section - Registry */
 #registry .registry-item {
-  -webkit-filter: saturate(0%);
+  
 }
 #registry .registry-item:hover {
   -webkit-filter: saturate(100%);
@@ -392,197 +362,6 @@ img {
   vertical-align: middle;
   margin: 0 0 25px 0;
 }
-/* Section - Recent works */
-.thumbnails {
-  padding: 0;
-}
-.thumbnails li {
-  margin-bottom: 30px;
-}
-.thumbnails .details {
-  display: block;
-  text-align: center;
-  font-size: 12px;
-  font-size: 0.75rem;
-}
-.thumbnail {
-  display: block;
-  -webkit-border-radius: 0;
-  -webkit-background-clip: padding-box;
-  -moz-border-radius: 0;
-  -moz-background-clip: padding;
-  border-radius: 0;
-  background-clip: padding-box;
-  border: 0 none;
-  margin-bottom: 10px;
-  padding: 0;
-  text-align: center;
-  text-decoration: none;
-  color: #333;
-}
-.thumbnail .img {
-  display: block;
-  width: 100%;
-  overflow: hidden;
-  height: 180px;
-  margin: 0 0 20px;
-  position: relative;
-}
-.thumbnail .title {
-  text-transform: uppercase;
-  margin: 0 2em;
-  display: block;
-  text-indent: 0;
-}
-.thumbnail .cover {
-  position: absolute;
-  display: block;
-  opacity: 0;
-  width: 100%;
-  height: 180px;
-  background-color: rgba(255, 255, 255, 0.8);
-  -webkit-transition-property: all;
-  -moz-transition-property: all;
-  -o-transition-property: all;
-  -ms-transition-property: all;
-  transition-property: all;
-  -webkit-transition-duration: 550ms;
-  -moz-transition-duration: 550ms;
-  -o-transition-duration: 550ms;
-  transition-duration: 550ms;
-}
-.thumbnail .cover .more {
-  position: absolute;
-  bottom: 15px;
-  right: 0;
-  height: 32px;
-  line-height: 32px;
-  padding: 0 20px;
-  -webkit-border-radius: 1px 0 0 1px;
-  -webkit-background-clip: padding-box;
-  -moz-border-radius: 1px 0 0 1px;
-  -moz-background-clip: padding;
-  border-radius: 1px 0 0 1px;
-  background-clip: padding-box;
-  font-size: 12px;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  text-shadow: 0 1px 0px #e1e1e1;
-  background: #807c6d;
-  color: #fcfaf1;
-}
-.thumbnail img {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.thumbnail:hover {
-  color: #333;
-  text-decoration: none;
-}
-.thumbnail:hover img {
-  -webkit-filter: saturate(0%);
-}
-.thumbnail:hover .cover {
-  opacity: 1;
-}
-/*********************************************************************
- 
-
-                                COMMENTS
-
-
-**********************************************************************/
-#comments {
-  font-size: 13px;
-  font-size: 0.8125rem;
-}
-#comments .comments-title {
-  margin: 0 0 5px 0;
-}
-#comments .leave-comment {
-  display: block;
-  margin: 0 0 40px 0;
-}
-#comments ul,
-#comments ol {
-  margin: 0;
-  padding: 0;
-}
-#comments .comment {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  clear: both;
-}
-#comments .comments-title {
-  text-shadow: none;
-  margin-bottom: 0;
-}
-#comments .avatar {
-  float: left;
-  width: 70px;
-  height: 70px;
-  margin-bottom: 30px;
-  border: 5px solid #eeeeee;
-  -webkit-border-radius: 50%;
-  -webkit-background-clip: padding-box;
-  -moz-border-radius: 50%;
-  -moz-background-clip: padding;
-  border-radius: 50%;
-  background-clip: padding-box;
-}
-#comments .children {
-  margin: 0 0 0 90px;
-}
-#comments .comment-meta {
-  margin: 0 0 0 90px;
-}
-#comments .comment-meta a {
-  color: #333333;
-}
-#comments .comment-meta a:hover {
-  color: #bd1550;
-}
-#comments .comment-meta .author {
-  margin: 0 20px 0 0;
-  font-weight: bold;
-}
-#comments .comment-meta .date {
-  margin: 0 20px 0 0;
-}
-#comments .comment-meta .date a {
-  color: #666666;
-}
-#comments .comment-meta .reply {
-  float: right;
-}
-#comments .comment-body {
-  margin: 0 0 35px 90px;
-}
-.comment-navigation {
-  width: 100%;
-  border-top: 1px solid #ccc;
-  padding: 2px 0 0 0;
-}
-.comment-navigation .nav-content {
-  border-top: 1px solid #ccc;
-  width: 100%;
-  padding: 10px 0 0 0;
-}
-.comment-navigation .nav-previous {
-  float: left;
-  width: 50%;
-}
-.comment-navigation .nav-next {
-  float: right;
-  width: 50%;
-  text-align: right;
-}
-#respond {
-  margin: 55px 0 0 0;
-}
 /*********************************************************************
  
 
@@ -590,46 +369,12 @@ img {
 
 
 **********************************************************************/
-#footer {
-  background: #232323;
-  padding: 30px 0 0 0;
-  font-size: 12px;
-  color: #999;
-}
-#footer a {
-  color: #ccc;
-}
-#footer a:hover {
-  color: #fff;
-}
-#footer h3.widget-title {
-  font-size: 15px;
-  font-size: 0.9375rem;
-  text-transform: uppercase;
-  color: #ccc;
-  margin: 0 0 20px;
-}
-#underfooter {
-  background: #191919;
+footer {
+  background: #186363;
+  margin-top: 20px;
   padding: 15px 0;
-  color: #777;
   font-size: 12px;
-}
-#underfooter a {
-  color: #aaa;
-}
-#underfooter a:hover {
-  color: #fff;
-}
-#underfooter p {
-  margin: 0;
-}
-.follow-me-icons {
-  font-size: 30px;
-}
-.follow-me-icons i {
-  float: left;
-  margin: 0 10px 0 0;
+  color: #fafafa;
 }
 /* Max page width
 /////////////////////////////////////////////////////////////////////*/
